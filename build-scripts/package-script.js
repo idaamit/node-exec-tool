@@ -1,7 +1,7 @@
 const {exec} = require('pkg');
 const fs = require("fs");
 
-const appVersion = process.env.npm_package_version;
+const appVersion = process.env.npm_package_version || '1.1.1';
 const exeFileName = `MyExec-${appVersion}`;
 const exeFileName64bit = exeFileName + "-win-x64";
 const exeFileName32bit = exeFileName + "-win-x86";
@@ -21,14 +21,14 @@ const jsonForPipeline =
                     "name": `${exeFileName64bit}`,
                     "vendor": "My Company",
                     "version": appVersion,
-                    "url": `/connectivityToolClient/${exeFileName64bit}.exe`,
+                    "url": `/myExecTool/${exeFileName64bit}.exe`,
                     "fileExtension": ".exe"
                 },
                 {
                     "name": `${exeFileName32bit}`,
                     "vendor": "My Company",
                     "version": appVersion,
-                    "url": `/connectivityToolClient/${exeFileName32bit}.exe`,
+                    "url": `/myExecTool/${exeFileName32bit}.exe`,
                     "fileExtension": ".exe"
                 },
             ]
